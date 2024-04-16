@@ -1,5 +1,5 @@
 /*
-Copyright © 2024 vino<vino0908@outlook.com>
+Copyright © 2024 Vino <vino0908@outlook.com>
 */
 package cmd
 
@@ -9,11 +9,17 @@ import (
 	"github.com/spf13/cobra"
 )
 
-// rootCmd represents the base command when called without any subcommands
 var rootCmd = &cobra.Command{
-	Use:     "pharos",
-	Example: "pharos new <project-name>",
-	Version: "0.0.1",
+	Use:   "pharos",
+	Short: "A cli for pharos admin",
+	Long: `
+ ____  _   _    _    ____   ___  ____  
+|  _ \| | | |  / \  |  _ \ / _ \/ ___| 
+| |_) | |_| | / _ \ | |_) | | | \___ \ 
+|  __/|  _  |/ ___ \|  _ <| |_| |___) |
+|_|   |_| |_/_/   \_\_| \_\\___/|____/ 
+                                       
+` + "A cli for pharos admin",
 }
 
 func Execute() {
@@ -24,13 +30,5 @@ func Execute() {
 }
 
 func init() {
-	// Here you will define your flags and configuration settings.
-	// Cobra supports persistent flags, which, if defined here,
-	// will be global for your application.
-
-	// rootCmd.PersistentFlags().StringVar(&cfgFile, "config", "", "config file (default is $HOME/.pharos.yaml)")
-
-	// Cobra also supports local flags, which will only run
-	// when this action is called directly.
 	rootCmd.Flags().BoolP("toggle", "t", false, "Help message for toggle")
 }
