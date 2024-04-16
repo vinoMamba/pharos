@@ -21,6 +21,7 @@ var apiCmd = &cobra.Command{
 			fmt.Println(err)
 			os.Exit(1)
 		}
+		fmt.Println("api file created successfully")
 	},
 }
 

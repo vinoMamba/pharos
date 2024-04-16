@@ -8,7 +8,9 @@ enum Api {
   {{.ApiName}}Detail = '',
 }
 
+
 export interface {{.ApiName}}ListResult {}
+
 export const get{{.ApiName}}ListApi = () => {
   return httpClient.get<{{.ApiName}}ListResult[]>(
     {
@@ -21,7 +23,7 @@ export interface Save{{.ApiName}}Params {}
 export const save{{.ApiName}}Api = (params: Save{{.ApiName}}Params) => {
   return httpClient.post(
     {
-      url: Api.Save,
+      url: Api.{{.ApiName}}Save,
       data: params,
     },
   )
@@ -33,7 +35,7 @@ export interface Update{{.ApiName}}Params extends Save{{.ApiName}}Params {
 export const update{{.ApiName}}Api = (params: Update{{.ApiName}}Params) => {
   return httpClient.put(
     {
-      url: Api.Update,
+      url: Api.{{.ApiName}}Update,
       data: params,
     },
   )
@@ -45,7 +47,7 @@ export interface Delete{{.ApiName}}Params {
 export const delete{{.ApiName}}Api = (params: Delete{{.ApiName}}Params) => {
   return httpClient.delete(
     {
-      url: Api.Delete,
+      url: Api.{{.ApiName}}Delete,
       data: params,
     },
   )
@@ -58,7 +60,7 @@ export interface Get{{.ApiName}}DetailParams {}
 export const get{{.ApiName}}DetailApi = (params: Get{{.ApiName}}DetailParams) => {
   return httpClient.get<{{.ApiName}}DetailResult>(
     {
-      url: Api.Detail,
+      url: Api.{{.ApiName}}Detail,
       params,
     },
   )
