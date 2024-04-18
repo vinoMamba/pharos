@@ -37,7 +37,7 @@ func NewModule(args []string) *Module {
 		os.Exit(1)
 	}
 
-	fileName := strings.Split(path, "/")[0]
+	fileName := strings.Split(path, "/")[len(strings.Split(path, "/"))-1]
 
 	moduleName := cases.Title(language.Dutch).String(fileName)
 
